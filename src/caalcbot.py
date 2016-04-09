@@ -42,14 +42,14 @@ def binary(bot, update_id):
         message = update.message.text
         firstname = update.message.from_user.first_name
         lastname = update.message.from_user.last_name
-        iduser = update.message.from_user.id
+        iduser = str(update.message.from_user.id)
         date = datetime.datetime.strftime(datetime.datetime.now(), '%Y-%m-%d %H:%M:%S')
         
         if message == '/start':
             welcome = "Welcome " + firstname + "!\nEnter a decimal number"
             bot.sendMessage(chat_id=chat_id, text = welcome )
             return update_id
-        if message == '/sendlog' and iduser == AdminId: #to be changed to admin's chat id
+        if message == '/sendlog' and iduser == 'AdminId': #to be changed to admin's chat id
             try:
                 bot.sendMessage(chat_id=chat_id, text = log_out )
             except:
