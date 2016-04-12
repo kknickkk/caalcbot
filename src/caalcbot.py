@@ -66,7 +66,7 @@ def binary(bot, update_id):
        
         num = int(message)        
         binary = "{0:b}".format(num)     
-        out =  "Bin ==> " + binary + "\nHex ==> " + hex(num)      
+        out =  "Bin ==> " + binary + "\nHex ==> " + hex(num) +"\nOct ==> " + oct(num)      
 
         if num == 42 :
             bot.sendMessage(chat_id=chat_id,text = "MAAAAAGIICCC NUUUUMBEEERRRRR\n")
